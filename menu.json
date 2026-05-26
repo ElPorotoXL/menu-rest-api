@@ -1,0 +1,48 @@
+[{
+    "id": 1001,
+    "name": "pizza",
+    "price": 25,
+    "description": "A delicious pizza, made with tomato sauce and cheese",
+    "image": "/img/pizza.png",
+    "rate": 4.8
+},
+{
+    "id": 1002,
+    "name": "hamburger",
+    "price": 15,
+    "description": "A delicious hamburger, made with beef and vegetables",
+    "image": "/img/hamburger.png",
+    "rate": 4.5
+},
+{
+    "id": 1003,
+    "name": "rice with chicken",
+    "price": 18,
+    "description": "A delicious plate of rice with chicken, made on rice... and chicken",
+    "image": "/img/rice.png",
+    "rate": 4.1
+},
+{
+    "id": 1004,
+    "name": "spaghetti",
+    "price": 18,
+    "description": "A delicious plate of spaghetti with tomato sauce and cheese",
+    "image": "/img/spaguetti.png",
+    "rate": 4.3
+},
+{
+    "id": 1005,
+    "name": "fried fries",
+    "price": 8,
+    "description": "A delicious plate of fried fries, made with potatoes",
+    "image": "/img/fries.png",
+    "rate": 4.2
+},
+{
+    "id": 1006,
+    "name": "coca cola",
+    "price": 3,
+    "description": "A bottle of coca cola, the classic drink",
+    "image": "/img/cocacola.png",
+    "rate": 4.0
+}]
