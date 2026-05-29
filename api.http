@@ -1,10 +1,14 @@
-GET http://localhost:3000/menu
-###
+# @baseUrl = http://localhost:3000
+@baseUrl = https://menu-rest-api.onrender.com
 
-GET http://localhost:3000/menu?name=pizza
-###
+### SEND REQUEST
+GET {{baseUrl}}/menu
 
-POST http://localhost:3000/menu
+### SEND REQUEST WITH FILTER
+GET {{baseUrl}}/menu?name=pizza
+
+### POST A DISH
+POST {{baseUrl}}/menu
 Content-Type: application/json
 
 {
@@ -13,9 +17,8 @@ Content-Type: application/json
     "description": "testeo",
     "rate": 5
 }
-###
-
-PATCH http://localhost:3000/menu/1001
+### PATCH A DISH
+PATCH {{baseUrl}}/menu/1001
 Content-Type: application/json
 
 {
@@ -24,7 +27,7 @@ Content-Type: application/json
     "description": "testeo updated",
     "rate": 4.5
 }
-###
+### DELETE A DISH
+DELETE {{baseUrl}}/menu/1001
 
-DELETE http://localhost:3000/menu/1001
 ###
