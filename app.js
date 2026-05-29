@@ -13,6 +13,10 @@ app.use(express.json())
 
 app.disable('x-powered-by')
 
+app.get("/", (req, res) => {
+    res.sendFile(path.join(__dirname, 'web', 'index.html'))
+})
+
 app.use('/img', express.static(path.join(__dirname, 'img')))
 
 
