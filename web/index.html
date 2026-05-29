@@ -25,7 +25,7 @@
         }
     </style>
     <script type="module">
-        fetch('https://menu-rest-api.onrender.com')
+        fetch('https://menu-rest-api.onrender.com/menu')
         .then(res => res.json())
         .then(menu => {
             const html = menu.map(item => {
