@@ -46,7 +46,7 @@
                 if (e.target.matches('button')) {
                     const article = e.target.closest('article')
                     const id = article.dataset.id
-                    fetch(`https://menu-rest-api.onrender.com/${id}`, {
+                    fetch(`https://menu-rest-api.onrender.com/menu/${id}`, {
                         method: 'DELETE'
                     })
                     .then(res => {
