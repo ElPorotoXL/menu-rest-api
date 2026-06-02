@@ -28,7 +28,7 @@
         // FETCH MENU FROM API
         // https://menu-rest-api.onrender.com/menu
         // http://localhost:3000
-        fetch('https://menu-rest-api.onrender.com')
+        fetch('https://menu-rest-api.onrender.com/menu')
         .then(res => res.json())
         .then(menu => {
             const html = menu.map(item => {
