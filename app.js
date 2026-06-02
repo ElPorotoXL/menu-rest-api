@@ -15,13 +15,13 @@ app.use(express.json())
 
 app.disable('x-powered-by')
 
+app.use('/', express.static(path.join(__dirname, 'web')))
+
 app.use('/img', express.static(path.join(__dirname, 'img')))
 
-app.use('/', routes)
+app.use('/menu', routes)
 
 const PORT = process.env.PORT ?? 3000
-
-console.log('Static files served from:', path.join(__dirname, 'img'))
 
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`)
