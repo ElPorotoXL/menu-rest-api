@@ -25,13 +25,16 @@
         }
     </style>
     <script type="module">
+        // FETCH MENU FROM API
+        // https://menu-rest-api.onrender.com/menu
+        // http://localhost:3000
         fetch('https://menu-rest-api.onrender.com/menu')
         .then(res => res.json())
         .then(menu => {
             const html = menu.map(item => {
                 return `<article data-id="${item.id}">
                     <h2>${item.name}</h2>
-                    <img src="https://menu-rest-api.onrender.com${item.image}" alt="${item.name}">
+                    <img src="https://menu-rest-api.onrender.com/menu${item.image}" alt="${item.name}">
                     <p>${item.description}</p>
                     <p>${item.price}</p>
                     <button style="background-color: red; color: white;">DELETE</button>

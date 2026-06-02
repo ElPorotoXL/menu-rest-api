@@ -1,4 +1,4 @@
-const z = require("zod")
+import z from 'zod'
 
 const menuSchema = z.object({
     name: z.string({
@@ -27,7 +27,4 @@ const validatePartialMenu = (object) => {
     return menuSchema.partial().safeParse(object)
 }
 
-module.exports = {
-    validateMenu,
-    validatePartialMenu
-}
+export { validateMenu, validatePartialMenu }
