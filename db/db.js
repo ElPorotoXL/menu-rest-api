@@ -6,9 +6,7 @@ const pool = mariadb.createPool({
     password: process.env.DB_PASSWORD,
     database: process.env.DB_NAME,
     connectionLimit: 5,
-    ssl: {
-        rejectUnauthorized: false
-    }
+    ssl: {}
 });
 
 export async function query(sql, params) {
