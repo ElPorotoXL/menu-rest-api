@@ -5,7 +5,7 @@ const pool = mysql.createPool({
     user: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
     database: process.env.DB_NAME,
-    connectionLimit: 0,
+    connectionLimit: 5,
     waitForConnections: true,
     queueLimit: 0,
     ssl: {
@@ -16,11 +16,15 @@ const pool = mysql.createPool({
 
 export async function query(sql, params) {
     try {
-        const [rows] = await pool.execute(sql, params);
+        let conn;
+        conn = await pool.getConnection();
+        const [rows] = await conn.execute(sql, params);
         return rows;
     } catch (error) {
         console.error(error);
         throw error;
+    } finally {
+        if (conn) conn.release();
     }
 }
 
