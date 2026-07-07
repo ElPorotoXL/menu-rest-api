@@ -10,8 +10,8 @@ const pool = mysql.createPool({
     queueLimit: 0,
     ssl: {
         rejectUnauthorized: false
-    }
-
+    },
+    connectTimeout: 60000
 });
 
 export async function query(sql, params) {
