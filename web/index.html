@@ -28,15 +28,15 @@
         // FETCH MENU FROM API
         // https://menu-rest-api.onrender.com/menu
         // http://localhost:3000
-        fetch('https://menu-rest-api.onrender.com/menu')
+        fetch('/menu')
         .then(res => res.json())
         .then(menu => {
             const html = menu.map(item => {
-                return `<article data-id="${item.id}">
-                    <h2>${item.name}</h2>
-                    <img src="https://menu-rest-api.onrender.com${item.image}" alt="${item.name}">
-                    <p>${item.description}</p>
-                    <p>${item.price}</p>
+                return `<article data-id="${item.IdMenu}">
+                    <h2>${item.Name}</h2>
+                    <img src="${item.Image}" alt="${item.Name}">
+                    <p>${item.Description}</p>
+                    <p>${item.Price}</p>
                     <button style="background-color: red; color: white;">DELETE</button>
                     </article>`
             }).join('')
@@ -46,7 +46,7 @@
                 if (e.target.matches('button')) {
                     const article = e.target.closest('article')
                     const id = article.dataset.id
-                    fetch(`https://menu-rest-api.onrender.com/menu/${id}`, {
+                    fetch(`/menu/${id}`, {
                         method: 'DELETE'
                     })
                     .then(res => {

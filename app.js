@@ -6,6 +6,7 @@ import { fileURLToPath } from 'url'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
+BigInt.prototype.toJSON = function() { return this.toString() }
 
 const app = express()
 
@@ -15,11 +16,11 @@ app.use(express.json())
 
 app.disable('x-powered-by')
 
+app.use('/menu', routes)
+
 app.use('/', express.static(path.join(__dirname, 'web')))
 
 app.use('/img', express.static(path.join(__dirname, 'img')))
-
-app.use('/menu', routes)
 
 const PORT = process.env.PORT ?? 3000
 

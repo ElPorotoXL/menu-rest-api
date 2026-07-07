@@ -16,7 +16,7 @@ const menuSchema = z.object({
     rate: z.number({
         invalid_type_error: "Rate must be a number",
         required_error: "Rate is required"
-    }).max(5)
+    }).max(10)
 })
 
 const validateMenu = (object) => {

@@ -1,4 +1,4 @@
-import menu from '../menu.json' with { type: 'json' }
+import menu from '../../menu.json' with { type: 'json' }
 
 export class MenuModel {
     static getAll ({ name }) {
